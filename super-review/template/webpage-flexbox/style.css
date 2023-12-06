@@ -41,7 +41,7 @@ main, .bottom {
 section {
     height: 200px;
     border: 1px solid black;
-    flex: 1; 
+    flex-basis: 1;
 }
 /******************************************
 /* ADDITIONAL STYLES
