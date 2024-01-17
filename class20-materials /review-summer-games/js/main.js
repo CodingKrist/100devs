@@ -10,3 +10,12 @@ function arrNum(arr) {
 
 //call
 arrNum([10,2,3])    
+
+// Utilizando loop FOR:
+
+//function arrNum(arr) {
+//    let start = 1
+//    for(let i = 0; i < arr.lenght; i++){
+//       start *= arr[i]
+//    }
+//}
