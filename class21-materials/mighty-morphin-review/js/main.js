@@ -42,9 +42,25 @@ takesThree(10, 20, 30)
 // *Conditionals*
 //Create a function that returns heads or tails randomly and as fairly as possible. 
 //Call the function.
+function headTail() {
+    let random = Math.random()
+    if (random < 0.5) {
+        return "heads"
+    } else {
+        return "tails"
+    }
+}
 
+console.log(headTail())
 
 //*Loops*
 //Create a function that takes in a number. 
 //Console log the result of heads or tails using the previous function x times 
 //where x is the number passed into the function. Call the function.
+
+function xTimes (num) {
+    for (let i = 1; i <= num; i++) {
+        let result = headTail()
+        console.log(result)
+    }
+}
