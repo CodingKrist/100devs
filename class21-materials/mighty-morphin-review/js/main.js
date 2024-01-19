@@ -51,7 +51,15 @@ function headTail() {
     }
 }
 
+
+//ARROW FUNCTION AND TERNARY FUNCTION:
+// const headTail= _ => Math.random < 0.5 ? "Heads" : "Tails"
+
+//El usar _ es porque no necesitamos un argumento como x.
+
 console.log(headTail())
+
+
 
 //*Loops*
 //Create a function that takes in a number. 
