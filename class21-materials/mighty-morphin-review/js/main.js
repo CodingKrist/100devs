@@ -53,9 +53,11 @@ function headTail() {
 
 
 //ARROW FUNCTION AND TERNARY FUNCTION:
-// const headTail= _ => Math.random < 0.5 ? "Heads" : "Tails"
+// const headTail= _ => Math.random() < 0.5 ? "Heads" : "Tails"
+// hay un return implicito que no es necesario poner, que iría así:
+// ... => return Math.random() ...
 
-//El usar _ es porque no necesitamos un argumento como x.
+//El usar _ es porque no necesitamos un parametro como x. Sería igual que haber puesto parentesis vacíos donde el guion bajo (). Usar el guion bajo es para indicar que no vas a meter parámetros, que va a quedarse vacío.
 
 console.log(headTail())
 
