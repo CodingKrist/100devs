@@ -2,6 +2,13 @@
 
 //Create and array of numbers. Sum all of the numbers. Alert the sum.
 
+arr = [1,2,3,4,5]
+
+const sum = arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+console.log(sum)
+
+
+
 //Create a function that takes in an array of numbers
 //Return a new array of numbers that is every original number squared
 
