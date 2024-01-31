@@ -63,3 +63,5 @@ reverseStr("Hola")
 const oneString = str => alert ( str === str.split("").reverse().join("") )
 
 oneString("HoloH") // alert true
+
+//Just adding some random text to play with branches at the terminal
