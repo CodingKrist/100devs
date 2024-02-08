@@ -13,6 +13,11 @@
 img{
   display: block;
   margin: 0 auto;
+  height: 350px;
+}
+
+.hidden{
+  display: none;
 }
 
 
