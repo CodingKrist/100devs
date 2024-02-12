@@ -5,7 +5,7 @@ fetch('https://www.deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
       .then(res => res.json()) // parse response as JSON
       .then(data => {
         console.log(data)
-       
+        deckId = data.deck_id
       })
       .catch(err => {
           console.log(`error ${err}`)
@@ -15,23 +15,43 @@ fetch('https://www.deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
 document.querySelector('button').addEventListener('click', drawTwo)
 
 function drawTwo(){
-  const choice = document.querySelector('input').value.toLowerCase()
-  const url = 'https://www.deckofcardsapi.com/api/deck/cbzbrde5c25t/draw/?count=2'+choice
+    const url = `https://www.deckofcardsapi.com/api/deck/${deckId}/draw/?count=2`
 
-  fetch(url)
+    fetch(url)
       .then(res => res.json()) // parse response as JSON
       .then(data => {
         console.log(data)
-        if (data.media_type === 'image'){
-          document.querySelector('img').src = data.hdurl
-        } else if(data.media_type === 'video'){
-          document.querySelector('iframe').src = data.url
-          document.querySelector('img').classList.add('hidden')
+        document.querySelector('#player1').src = data.cards[0].image
+        document.querySelector('#player2').src = data.cards[1].image
+
+        let player1Value = convertToNum(data.cards[0].value)
+        let player2Value = convertToNum(data.cards[1].value)
+
+        if ( player1Value > player2Value ) {
+          document.querySelector('h3').innerText = 'Player 1 Wins'
+        } else if ( player1Value < player2Value) {
+          document.querySelector('h3').innerText = 'Player 2 Wins'
+        } else {
+          document.querySelector('h3').innerText = 'Time for WAR'
         }
-        document.querySelector('h3').innerText = data.explanation
+
       })
+
       .catch(err => {
           console.log(`error ${err}`)
       });
 }
 
+function convertToNum(val) {
+  if (val === 'ACE') {
+    return 14
+  } else if(val === 'KING') {
+    return 13
+  } else if( val === 'QUEEN') {
+    return 12
+  } else if(val === 'JACK' ) {
+    return 11
+  } else {
+    return Number(val)
+  }
+} 
