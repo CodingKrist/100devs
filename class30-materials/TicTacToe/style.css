@@ -61,3 +61,29 @@ button {
     text-align: center;
     margin-top: 40px;
 }
+
+.ganador{
+    color: rgb(226, 36, 232)
+}
+
+dialog {
+    text-align: center;
+    min-width: 25vw;
+    padding: 5rem
+    border: unset;
+    border-radius: 15px;
+}
+
+dialog h2{
+    font-family: "Press Start 2P", system-ui;
+    font-size: xx-large;
+}
+
+dialog button {
+    padding: 1rem;
+    font-size: larger;
+}
+
+dialog::backdrop{
+    backdrop-filter: blur(3px);
+}
