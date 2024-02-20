@@ -1,18 +1,11 @@
-// Given a string, you have to return a string in which each character (case-sensitive) is repeated once.
+// Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the string should be retained.
 
-// Examples (Input -> Output):
-// * "String"      -> "SSttrriinngg"
-// * "Hello World" -> "HHeelllloo  WWoorrlldd"
-// * "1234!_ "     -> "11223344!!__  "
+// Examples
+// "This is an example!" ==> "sihT si na !elpmaxe"
+// "double  spaces"      ==> "elbuod  secaps"
 
-let str = "String"
+let str = "double  spaces"
 
-function doubleChar(str) {
-
-  return str.split('').map(x => x = x + x).join('')
-
-  // let arr = str.split("")
-  // let newArr = arr.forEach(x => x = `${x} + ${x}`)
-  // return newArr
-  //return newArr.join('')
+function reverseWords(str) {
+  return str.split(" ").map(x => x.split("").reverse().join("")).join(" ")
 }
