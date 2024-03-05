@@ -1,15 +1,26 @@
-// An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.
+// Create a function that accepts a string and a single character, and returns an integer of the count of occurrences the 2nd argument is found in the first one.
 
-// Example: (Input --> Output)
+// If no occurrences can be found, a count of 0 should be returned.
 
-// "Dermatoglyphics" --> true "aba" --> false "moOse" --> false (ignore letter case)
+// ("Hello", "o")  ==>  1
+// ("Hello", "l")  ==>  2
+// ("", "z")       ==>  0
+// str_count("Hello", 'o'); // returns 1
+// str_count("Hello", 'l'); // returns 2
+// str_count("", 'z'); // returns 0
+// Notes
+// The first argument can be an empty string
+// In languages with no distinct character data type, the second argument will be a string of length 1
 
-// isIsogram "Dermatoglyphics" = true
-// isIsogram "moose" = false
-// isIsogram "aba" = false
+let str = "Hello";
+let letter = "l";
 
-let str = "moose"
+function strCount(str, letter){  
+  if (str.length === 0) {
+    return 0
+  }else {
+    let numLetter = str.split("").filter(x => x === letter);
+    return numLetter.length
+  }
+}
 
-function isIsogram(str){
- return new Set(str.toUpperCase()).size === str.length // new Set te hace un objeto con las letras de la cadena SIN REPETIR
-                                                        // por ejemplo de moose en el ejemplo hace: M O S E, un objeto con 4 elementos.
