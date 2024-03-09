@@ -12,15 +12,5 @@
 // The first argument can be an empty string
 // In languages with no distinct character data type, the second argument will be a string of length 1
 
-let str = "Hello";
-let letter = "l";
-
-function strCount(str, letter){  
-  if (str.length === 0) {
-    return 0
-  }else {
-    let numLetter = str.split("").filter(x => x === letter);
-    return numLetter.length
-  }
-}
+let numero = 1.7777 + 1/2
 
